@@ -14,7 +14,7 @@ export default function TasksList() {
       <p className='text-slate-400'>
         Tareas completas {complete}/{tasks.length}
       </p>
-      <div className='grid grid-cols-[repeat(auto-fill,minmax(min(100%,250px),1fr))] gap-2'>
+      <div className='grid grid-cols-[repeat(auto-fill,minmax(min(100%,260px),1fr))] gap-2'>
         {tasks.map((task) => (
           <TaskCard
             key={task.id}

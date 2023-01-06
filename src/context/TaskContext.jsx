@@ -37,6 +37,19 @@ export function TaskContextProvider(props) {
     ])
   }
 
+  const updateTask = (data) => {
+    setTasks(
+      tasks.map((task) => {
+        if (task.id !== data.id) return task
+        return {
+          ...task,
+          title: data.title,
+          description: data.description,
+        }
+      })
+    )
+  }
+
   const deleteTask = (id) => {
     setTasks(tasks.filter((task) => task.id !== id))
   }
@@ -60,6 +73,7 @@ export function TaskContextProvider(props) {
         createTask,
         deleteTask,
         completeTask,
+        updateTask,
         complete,
       }}>
       {props.children}
