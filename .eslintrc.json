@@ -6,6 +6,7 @@
     },
     "extends": [
         "standard",
+        "eslint-config-prettier",
         "eslint:recommended",
         "plugin:react/recommended"
     ],
