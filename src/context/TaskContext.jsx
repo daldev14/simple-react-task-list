@@ -17,11 +17,13 @@ export function TaskContextProvider(props) {
       complete: false,
     },
   ]
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState(tareas)
+  const [complete, setComplete] = useState(0)
 
   useEffect(() => {
-    setTasks(tareas)
-  }, [])
+    // setTasks(tareas)
+    setComplete(tasks.filter((task) => task.complete === true).length)
+  }, [tasks])
 
   const createTask = (task) => {
     setTasks([
@@ -58,6 +60,7 @@ export function TaskContextProvider(props) {
         createTask,
         deleteTask,
         completeTask,
+        complete,
       }}
     >
       {props.children}
